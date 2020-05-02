@@ -12,6 +12,11 @@ export default (state, action) => {
         prayerIntentions: [...state.prayerIntentions, action.payload],
         isPrayerAdded: true,
       };
+    case 'SEND_EMAIL':
+      return {
+        ...state,
+        isEmailSent: true,
+      };
     case 'PRAYERS_ERROR':
       return {
         ...state,

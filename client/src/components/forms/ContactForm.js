@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useContext } from 'react';
+import { EmailSuccess } from '../notifications/EmailSuccess';
+import { GlobalContext } from '../../context/GlobalState';
 
 export const ContactForm = () => {
   const [userFullName, setUserFullName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userMessage, setUserMessage] = useState('');
 
-  const onSubmit = async (e) => {
+  const { sendEmail, isEmailSent } = useContext(GlobalContext);
+
+  const onSubmit = (e) => {
     e.preventDefault();
 
     const newContact = {
@@ -15,11 +18,10 @@ export const ContactForm = () => {
       userMessage,
     };
 
-    try {
-      await axios.post('/send-email', newContact);
-    } catch (err) {
-      console.log(err);
-    }
+    sendEmail(newContact);
+    setUserFullName('');
+    setUserEmail('');
+    setUserMessage('');
   };
 
   return (
@@ -45,7 +47,7 @@ export const ContactForm = () => {
         />
         <label htmlFor='message'>Message: </label>
         <textarea
-          name=''
+          className='user-message-textarea'
           value={userMessage}
           onChange={(e) => {
             setUserMessage(e.target.value);
@@ -53,6 +55,7 @@ export const ContactForm = () => {
         ></textarea>
         <input type='submit' value='SEND' className='submit-button' />
       </form>
+      <div className='user-message'>{isEmailSent ? <EmailSuccess /> : ''}</div>
     </div>
   );
 };

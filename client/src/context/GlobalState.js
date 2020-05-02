@@ -8,6 +8,7 @@ const initialState = {
   loading: true,
   error: null,
   isPrayerAdded: false,
+  isEmailSent: false,
 };
 
 // Create Context
@@ -56,6 +57,18 @@ export const GlobalProvider = ({ children }) => {
     }
   }
 
+  async function sendEmail(newContact) {
+    try {
+      dispatch({
+        type: 'SEND_EMAIL',
+        payload: {},
+      });
+      await axios.post('/send-email', newContact);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -63,8 +76,10 @@ export const GlobalProvider = ({ children }) => {
         error: state.error,
         loading: state.loading,
         isPrayerAdded: state.isPrayerAdded,
+        isEmailSent: state.isEmailSent,
         getPrayers,
         addPrayer,
+        sendEmail,
       }}
     >
       {children}
