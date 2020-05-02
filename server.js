@@ -11,6 +11,7 @@ connectDB();
 
 // Bring router in
 const prayerIntentions = require('./routes/prayerIntentions');
+const contact = require('./routes/contact');
 
 // Initialise express
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/prayer-intentions', prayerIntentions);
+app.use('/send-email', contact);
 
 // Serve static asserts if in production
 if (process.env.NODE_ENV === 'production') {
