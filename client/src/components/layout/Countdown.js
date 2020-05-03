@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 export const Countdown = () => {
   let dayOfEvent = new Date('May 09, 2020 19:00:00').getTime();

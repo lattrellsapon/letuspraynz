@@ -148,6 +148,10 @@ nav {
   border-radius: 8px;
 }
 
+.right {
+  float: right;
+}
+
 .prayer-item h3,
 .prayer-item p {
   margin: 20px 0;

@@ -12,11 +12,11 @@ export const Navbar = () => {
             HOME
           </Link>
         </li>
-        <li className='nav-link'>
+        {/* <li className='nav-link'>
           <Link to='/about' className='nav-link-item'>
             ABOUT
           </Link>
-        </li>
+        </li> */}
         <li className='nav-link'>
           <Link to='/prayer-intentions' className='nav-link-item'>
             PRAYER INTENTIONS
