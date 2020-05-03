@@ -1,4 +1,6 @@
 import React from 'react';
+import { Countdown } from '../layout/Countdown';
+
 import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
@@ -26,6 +28,9 @@ export const Navbar = () => {
           </Link>
         </li>
       </ul>
+      <div>
+        <Countdown />
+      </div>
     </nav>
   );
 };

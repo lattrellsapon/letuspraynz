@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Countdown = () => {
-  let dayOfEvent = new Date('May 09, 2020').getTime();
+  let dayOfEvent = new Date('May 09, 2020 19:00:00').getTime();
+
+  const startTime = new Date('May 09, 2020 19:00:00').getTime();
+  const endTime = new Date('May 09, 2020 22:00:00').getTime();
+
+  const currentTime = new Date();
 
   //   const [dayOfEvent, sayDayOfEvent] = useState()
   const [days, setDays] = useState(undefined);
@@ -40,32 +46,21 @@ export const Countdown = () => {
     }, 1000);
   }, []);
 
-  return (
-    <div className='countdown-container '>
-      <div className='countdownitem'>
-        <p>{days}</p>
+  if (currentTime >= startTime && currentTime <= endTime) {
+    return (
+      <div className='countdown-button'>
+        <a href='' className='join-us-button'>
+          JOIN US
+        </a>
       </div>
-      <div className='countdownitem'>
-        <p>{hours}</p>
+    );
+  } else {
+    return (
+      <div className='countdown'>
+        <p>
+          {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
+        </p>
       </div>
-      <div className='countdownitem'>
-        <p>{minutes}</p>
-      </div>
-      <div className='countdownitem'>
-        <p>{seconds}</p>
-      </div>
-      <div className='countdownitem'>
-        <p>DAYS</p>
-      </div>
-      <div className='countdownitem'>
-        <p>HOURS</p>
-      </div>
-      <div className='countdownitem'>
-        <p>MINUTES</p>
-      </div>
-      <div className='countdownitem'>
-        <p>SECONDS</p>
-      </div>
-    </div>
-  );
+    );
+  }
 };

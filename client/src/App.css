@@ -106,23 +106,27 @@ nav {
   background: #f8f9fa;
   border: #f8f9fa;
   color: #664eae;
-  padding: 10px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  text-decoration: underline;
+}
+
+.countdown {
+  background: #f8f9fa;
+  border: #f8f9fa;
+  color: #664eae;
+  padding: 5px;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 4px;
+}
+
+.countdown-button {
+  margin: 10px auto;
 }
 
 .home-container {
   min-height: 620px;
-}
-
-.countdown-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-  width: 15%;
-  margin: auto;
-}
-
-.countdownitem p {
-  font-size: 18px;
 }
 
 /* Prayer Intentions */
@@ -321,6 +325,9 @@ footer {
   }
   .user-email {
     width: 50%;
+  }
+  .countdown {
+    width: 20%;
   }
 }
 
