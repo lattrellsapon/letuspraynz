@@ -129,6 +129,11 @@ nav {
   min-height: 620px;
 }
 
+/* About */
+.about-content p {
+  margin: 20px 0;
+}
+
 /* Prayer Intentions */
 .prayer-intentions-header {
   padding: 10px 5px;
