@@ -4,7 +4,7 @@ export const Countdown = () => {
   let dayOfEvent = new Date('May 09, 2020 19:00:00').getTime();
 
   const startTime = new Date('May 09, 2020 18:45:00').getTime();
-  const endTime = new Date('May 09, 2020 22:00:00').getTime();
+  const endTime = new Date('May 09, 2020 20:40:00').getTime();
 
   const currentTime = new Date();
 
