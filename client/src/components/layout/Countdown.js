@@ -57,6 +57,8 @@ export const Countdown = () => {
         </a>
       </div>
     );
+  } else if (currentTime > endTime) {
+    return <div>{}</div>;
   } else {
     return (
       <div className='countdown'>
