@@ -103,9 +103,9 @@ nav {
 }
 
 .join-us-button {
-  background: #f8f9fa;
-  border: #f8f9fa;
-  color: #664eae;
+  background: #dc3545;
+  border: #dc3545;
+  color: #f8f9fa;
   padding: 5px 8px;
   border-radius: 4px;
   text-decoration: underline;
@@ -293,12 +293,12 @@ footer {
     font-size: 1.17em;
   }
 
-  .join-us-button {
+  /* .join-us-button {
     background: #f8f9fa;
     border: #f8f9fa;
     color: #664eae;
     padding: 10px;
-  }
+  } */
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

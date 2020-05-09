@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 export const Countdown = () => {
   let dayOfEvent = new Date('May 09, 2020 19:00:00').getTime();
 
-  const startTime = new Date('May 09, 2020 19:00:00').getTime();
+  const startTime = new Date('May 09, 2020 18:45:00').getTime();
   const endTime = new Date('May 09, 2020 22:00:00').getTime();
 
   const currentTime = new Date();
@@ -48,7 +48,11 @@ export const Countdown = () => {
   if (currentTime >= startTime && currentTime <= endTime) {
     return (
       <div className='countdown-button'>
-        <a href='' className='join-us-button'>
+        <a
+          href='https://www.facebook.com/watch/live/?v=741689736365047&ref=notif&notif_id=1589006827203871&notif_t=live_video'
+          className='join-us-button'
+          target='_blank'
+        >
           JOIN US
         </a>
       </div>
